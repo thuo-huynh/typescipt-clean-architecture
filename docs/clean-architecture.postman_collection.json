@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "e7977cbb-c41e-415a-8fac-5037e5ca4427",
+		"name": "clean-architecture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14375026",
+		"_collection_link": "https://blue-moon-520219.postman.co/workspace/SCF~c649b94a-deeb-4a93-adc1-f65dc64418e2/collection/14375026-e7977cbb-c41e-415a-8fac-5037e5ca4427?action=share&source=collection_link&creator=14375026"
+	},
+	"item": [
+		{
+			"name": "translate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"originalText\": \"Tôi tên là Thương !\",\r\n    \"source\": \"vi\",\r\n    \"destination\": \"en\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/translate"
+			},
+			"response": []
+		},
+		{
+			"name": "history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/v1/histories"
+			},
+			"response": []
+		}
+	]
+}

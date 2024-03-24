@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+    server:
+        container_name: clean-server
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - database
+        env_file:
+            - .env
+        ports:
+            - $PORT:3000
+        networks:
+            - clean-network
+
+    database:
+        container_name: clean-database
+        image: postgres:16-alpine
+        restart: always
+        environment:
+            POSTGRES_USER: $DB_USERNAME
+            POSTGRES_PASSWORD: $DB_PASSWORD
+            POSTGRES_DB: $DB_NAME
+        ports:
+            - $DB_PORT:5432
+        env_file:
+            - .env
+        volumes:
+            - .docker/db:/var/lib/postgresql
+        networks:
+            - clean-network
+
+networks:
+    clean-network:
