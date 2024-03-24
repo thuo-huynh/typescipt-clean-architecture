@@ -8,4 +8,4 @@ This is a demo repository for implementing Clean Architecture in Typescript.
 
 ## Sequence diagrams
 
-![](/docs/statics/translation-sequence-diagram.png.png)
+![](/docs/statics/translation-sequence-diagram.png)
